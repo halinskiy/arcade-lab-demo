@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games Catalogue: пилот</title>
+<style>
+  :root { --bg:#0c0e1a; --card:#151a2e; --line:#2a3250; --text:#e9ecf5; --muted:#9aa3c0; --accent:#ffb45a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font: 17px/1.55 -apple-system, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
+  h1 { font-size: 26px; margin: 8px 0 6px; }
+  h2 { font-size: 19px; margin: 22px 0 8px; }
+  p { margin: 8px 0; }
+  .muted { color: var(--muted); }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0; }
+  .links a { display: block; flex: 1 1 220px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; color: var(--text); text-decoration: none; }
+  .links a strong { display: block; font-size: 19px; color: var(--accent); margin-bottom: 4px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .note { border-left: 3px solid var(--accent); padding: 6px 12px; background: var(--card); border-radius: 0 10px 10px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Games Catalogue: пилот HTML5-игр для мобильных</h1>
+  <p class="muted">Копия для просмотра, собрана 2026-10-09. Открывается на телефоне и на компьютере.</p>
+
+  <div class="links">
+    <a href="demo/"><strong>Открыть демо</strong>Витрина с двумя играми. На телефоне лучше в вертикальном положении.</a>
+    <a href="grid/"><strong>Вариант 2: строгая сетка</strong>Та же витрина и те же игры в другом облике: линии, нумерация, моноширинные подписи.</a>
+    <a href="dragon/"><strong>Дракон: три варианта</strong>Доска с концептами нового персонажа для Paper Dragon.</a>
+  </div>
+
+  <h2>Что внутри</h2>
+  <ul>
+    <li><b>Paper Dragon</b> (three.js): ночной полёт бумажного дракона над долиной, сбор фонариков, грозовые облака, комбо, четыре окраса, сохранение рекорда, русский и английский.</li>
+    <li><b>Planet Drop</b> (Canvas 2D): бросаешь планеты в банку, одинаковые сливаются в следующую, одиннадцать ступеней.</li>
+    <li><b>Витрина</b> с dev-host: игра открывается в окне хоста с паузой, звуком, языком, пресетами экранов и журналом вызовов SDK.</li>
+  </ul>
+
+  <p class="note">Это демо в браузере с эмуляцией хост-окна. Это не платформа YouTube Playables, не приложение YouTube и не проверка на физическом телефоне. Сохранение рекорда в демо локальное.</p>
+
+  <h2>Как смотреть</h2>
+  <ul>
+    <li>В демо выбрать игру, на телефоне управлять пальцем, на компьютере мышью или стрелками.</li>
+    <li>Кнопки под сценой: пауза хоста, звук, язык, пресеты соотношений сторон, сброс сохранения.</li>
+    <li>На доске дракона у каждого варианта два кадра: в игре и крупно; внизу таблица, как он делается.</li>
+  </ul>
+
+  <h2>Что дальше</h2>
+  <ul>
+    <li>Дракон: по выбранному варианту одна генерация модели в Tripo, резка и упрощение в Blender, подключение в игру с теми же окрасами.</li>
+    <li>Проверка на реальных телефонах и в целевой среде.</li>
+  </ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дракон: выбор варианта</title>
+<style>
+  :root { --bg:#0c0e1a; --card:#151a2e; --line:#2a3250; --text:#e9ecf5; --muted:#9aa3c0; --accent:#ffb45a; --ok:#7ad68a; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font: 16px/1.5 -apple-system, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 22px; margin: 8px 0 4px; }
+  h2 { font-size: 19px; margin: 0 0 6px; }
+  p { margin: 6px 0; }
+  .muted { color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin: 14px 0; }
+  .shots { display: grid; grid-template-columns: 3fr 2fr; gap: 10px; }
+  @media (max-width: 760px) { .shots { grid-template-columns: 1fr; } }
+  figure { margin: 0; }
+  figure a { display: block; border-radius: 8px; overflow: hidden; background: #000; border: 1px solid var(--line); }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .pending { aspect-ratio: 3 / 2; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; background: repeating-linear-gradient(45deg, #11152a, #11152a 12px, #0e1224 12px, #0e1224 24px); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin-top: 8px; }
+  td { padding: 4px 8px 4px 0; vertical-align: top; }
+  td:first-child { color: var(--muted); white-space: nowrap; width: 140px; }
+  label.pick { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; cursor: pointer; }
+  label.pick:has(input:checked) { border-color: var(--accent); background: #1d1a1a; }
+  input[type=radio] { width: 20px; height: 20px; }
+  textarea { width: 100%; min-height: 80px; background: #0e1224; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 10px; font: inherit; }
+  button { background: var(--accent); color: #1b1016; border: 0; border-radius: 10px; padding: 12px 18px; font: 600 16px inherit; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  #saved { color: var(--ok); }
+  .current { display: grid; grid-template-columns: 3fr 2fr; gap: 10px; }
+  @media (max-width: 760px) { .current { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Дракон для Paper Dragon: три варианта</h1>
+  <p class="muted">Доска выбора дракона. Выбор сделан: вариант A, итог в первой карточке. Ниже три варианта, из которых выбирали, и текущий кадр на момент выбора.</p>
+
+  <section class="card" id="result">
+    <h2>Итог: вариант A в игре (09.10.2026)</h2>
+    <p>Костя выбрал A. Лист из четырёх частей нарисовал Codex, Tripo сделал модель за одну генерацию (30 кредитов, 420 → 390), Blender разрезал её на голову, сегмент, хвост и гребень, в игре они стоят на той же цепочке, что и раньше. Слева эталон, справа кадр из игры.</p>
+    <div class="shots">
+      <figure><a href="concepts/a-closeup.jpg" target="_blank"><img src="concepts/a-closeup.jpg" alt="Эталон: концепт A крупно"></a><figcaption>Эталон: концепт A</figcaption></figure>
+      <figure><a href="game/desktop-play.jpg" target="_blank"><img src="game/desktop-play.jpg" alt="Кадр из игры с новым драконом"></a><figcaption>Кадр из игры, десктоп</figcaption></figure>
+    </div>
+    <div class="shots">
+      <figure><a href="game/phone-start.jpg" target="_blank"><img src="game/phone-start.jpg" alt="Телефон, старт полёта"></a><figcaption>Телефон 720×1280, старт полёта: виден весь дракон с хвостом</figcaption></figure>
+      <figure><a href="game/skins.jpg" target="_blank"><img src="game/skins.jpg" alt="Четыре окраса"></a><figcaption>Окрасы Уголёк, Нефрит, Лотос, Призрак: та же текстура, сдвиг тона в шейдере</figcaption></figure>
+    </div>
+    <table>
+      <tr><td>Модель</td><td>Tripo HD Model H3.1, 941 892 треугольника → в игре 7 097, текстура 1024 JPEG, файл 232 KiB, бандл 1.02 MiB, проверка платформы PASS.</td></tr>
+      <tr><td>Части</td><td><a href="game/kit-review.jpg" target="_blank">рендер проверки</a>: спереди, сбоку, сверху после резки и поворота.</td></tr>
+      <tr><td>Что осталось</td><td>Посмотреть на телефоне, сказать, что поправить: размер головы, частоту гребней, яркость свечения, окрасы.</td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Сейчас в игре</h2>
+    <div class="current">
+      <figure><a href="refs/frame-desktop-3x2.png" target="_blank"><img src="refs/frame-desktop-3x2.png" alt="Текущий кадр игры"></a><figcaption>Текущий кадр, десктоп</figcaption></figure>
+      <figure><a href="refs/dragon-closeup-current.png" target="_blank"><img src="refs/dragon-closeup-current.png" alt="Текущий дракон крупно"></a><figcaption>Текущий дракон: шары и треугольники</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="card" id="A">
+    <h2>A. Фестивальный дракон</h2>
+    <p>Китайский танцующий дракон из лакированной бумаги и золота: резная голова с рогами и гривой, тело из перекрывающихся сегментов с чешуёй, золотой гребень по спине, хвост-пламя. Светится изнутри, как фонарь.</p>
+    <div class="shots">
+      <figure><a href="concepts/a-frame.jpg" target="_blank"><img src="concepts/a-frame.jpg" alt="Вариант A в кадре игры"></a><figcaption>В кадре игры</figcaption></figure>
+      <figure><a href="concepts/a-closeup.jpg" target="_blank"><img src="concepts/a-closeup.jpg" alt="Вариант A крупно"></a><figcaption>Крупно</figcaption></figure>
+    </div>
+    <table>
+      <tr><td>Как делается</td><td>Один лист Tripo из четырёх частей: голова, сегмент тела, хвост, гребень. Blender режет и упрощает. В игре остаётся та же гибкая цепочка, но из настоящих частей.</td></tr>
+      <tr><td>Кредиты Tripo</td><td>Около 30–40 за одну генерацию.</td></tr>
+      <tr><td>Риск</td><td>Низкий. Стыки сегментов прячутся перекрытием.</td></tr>
+    </table>
+  </section>
+
+  <section class="card" id="B">
+    <h2>B. Шёлковый фонарь</h2>
+    <p>Дракон с праздника фонарей: тело из полупрозрачных шёлковых фонарей на бамбуковом каркасе, каждый светится изнутри; голова-фонарь с горящими глазами, ленты и кисточки вместо гривы и плавников.</p>
+    <div class="shots">
+      <figure><a href="concepts/b-frame.jpg" target="_blank"><img src="concepts/b-frame.jpg" alt="Вариант B в кадре игры"></a><figcaption>В кадре игры</figcaption></figure>
+      <figure><a href="concepts/b-closeup.jpg" target="_blank"><img src="concepts/b-closeup.jpg" alt="Вариант B крупно"></a><figcaption>Крупно</figcaption></figure>
+    </div>
+    <table>
+      <tr><td>Как делается</td><td>Один лист Tripo из четырёх частей: голова, фонарь-сегмент, хвост, ленты. Свечение изнутри делается материалом в игре, оно же меняет цвет по окрасам.</td></tr>
+      <tr><td>Кредиты Tripo</td><td>Около 30–40 за одну генерацию.</td></tr>
+      <tr><td>Риск</td><td>Низкий. Самый заметный ночью, лучше всего связан с темой фонариков.</td></tr>
+    </table>
+  </section>
+
+  <section class="card" id="C">
+    <h2>C. Небесный змей</h2>
+    <p>Цельный скульптурный восточный дракон: рельефная чешуя и брюшные пластины, оленьи рога, усы, четыре небольшие лапы, гребень из мягких плавников по хребту, хвост с кисточкой. Тёплая керамика с золотом, свет из пасти и глаз.</p>
+    <div class="shots">
+      <figure><a href="concepts/c-frame.jpg" target="_blank"><img src="concepts/c-frame.jpg" alt="Вариант C в кадре игры"></a><figcaption>В кадре игры</figcaption></figure>
+      <figure><a href="concepts/c-closeup.jpg" target="_blank"><img src="concepts/c-closeup.jpg" alt="Вариант C крупно"></a><figcaption>Крупно</figcaption></figure>
+    </div>
+    <table>
+      <tr><td>Как делается</td><td>Одна цельная модель Tripo. Blender выпрямляет тело, ставит позвоночник из костей и веса. В игре кости идут по следу головы, тело гнётся сплошной волной.</td></tr>
+      <tr><td>Кредиты Tripo</td><td>Около 30–40 за одну генерацию.</td></tr>
+      <tr><td>Риск</td><td>Средний. Выпрямление и швы текстуры требуют проверки, работы на полдня больше. Выглядит серьёзнее всех.</td></tr>
+    </table>
+  </section>
+
+  
+</main>
+
+</body>
+</html>
